@@ -9,7 +9,7 @@
 var request = require('request'),
     _ = require('underscore');
 
-var response = function(error, response, body) {
+var res = function(error, response, body ,cb) {
     if (!error) {
         cb(null, {
             stat: response.statusCode,
@@ -24,18 +24,31 @@ var response = function(error, response, body) {
     }
 };
 
-// get
-exports.get = function(url, params, cb) {
-    if (params != null && typeof(params) == 'object') {
+// join params to url
+exports.join = function(params, url) {
+    if (_.isObject(params)) {
         var url = url + '?';
-        _.each(params, function(value, key) {
-            url = url + '&' + key + '=' + value
+        _.each(params, function(value, key ,list) {
+            url = [
+                url,
+                (url.lastIndexOf('?') == url.length - 1) ? '' : '&',
+                key,
+                '=',
+                value
+            ].join('');
         });
     }
+    return url;
+}
+
+// get
+exports.get = function(url, params, cb) {
     request.get({
-        url: url,
+        url: exports.join(params, url),
         json: true
-    }, response)
+    }, function(error, response, body){
+        res(error, response, body, cb)
+    })
 }
 
 // post
@@ -44,5 +57,7 @@ exports.post = function(url, params, cb) {
         url: url,
         form: params,
         json: true
-    }, response)
+    }, function(error, response, body){
+        res(error, response, body, cb)
+    })
 }

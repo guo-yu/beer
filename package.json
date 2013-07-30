@@ -1,10 +1,10 @@
 {
   "name": "beer",
-  "version": "0.0.1",
-  "description": "have a drink and waiting for result callback",
+  "version": "0.0.2",
+  "description": "have a drink and waiting for results callback",
   "main": "index.js",
   "scripts": {
-    "test": "mocha ./test.js"
+    "test": "./node_modules/mocha/bin/mocha ./test.js"
   },
   "repository": {
     "type": "git",
@@ -24,4 +24,8 @@
     "request": "*",
     "underscore": "*"
   },
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*"
+  }
 }

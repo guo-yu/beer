@@ -1,12 +1,19 @@
 beer ![npm](https://badge.fury.io/js/beer.png)
 ======
 
-have a drink and waiting for result callback
+a useful warpper of request. have a drink and waiting for results callback.
 
 ### How to install 
 
 ````
 $ npm install beer
+````
+
+or 
+
+````
+$ git clone https://github.com/turingou/beer.git
+$ cd beer
 ````
 
 ### Sample code
@@ -33,7 +40,7 @@ beer.get("http://google/com",{
 
 - `url` [String]
 - `params` [Object]
-    - `key` : ``value` : will joined `URL`
+    - `key` : `value` : params will join `URL` as `?key=value`
 - `callback` [Funtion]
     - error : null or error object
     - result : fetch result
@@ -42,7 +49,16 @@ beer.get("http://google/com",{
 
 - `url` [String]
 - `params` [Object] sent as `form`
-    - `key` : ``value`
+    - `key` : `value`
 - `callback` [Funtion]
     - error : null or error object
     - result : fetch result
+
+### Run unit-test (Mocha)
+
+````
+$ git clone https://github.com/turingou/beer.git
+$ cd beer
+$ npm install // will install mocha localy
+$ npm test
+````
