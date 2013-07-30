@@ -1,4 +1,4 @@
-beer ![npm](https://badge.fury.io/js/beer.png)
+![logo](https://cdn2.iconfinder.com/data/icons/fatcow/32/beer.png) beer ![npm](https://badge.fury.io/js/beer.png)
 ======
 
 a useful warpper of request. have a drink and waiting for results callback.
