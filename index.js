@@ -61,3 +61,13 @@ exports.post = function(url, params, cb) {
         res(error, response, body, cb)
     })
 }
+
+// put
+exports.put = function(url, params, cb) {
+
+}
+
+// delete
+exports.delete = function(url, params, cb) {
+    
+}

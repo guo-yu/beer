@@ -14,6 +14,7 @@ or
 ````
 $ git clone https://github.com/turingou/beer.git
 $ cd beer
+$ npm install
 ````
 
 ### Sample code
