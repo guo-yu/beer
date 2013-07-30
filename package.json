@@ -1,0 +1,27 @@
+{
+  "name": "beer",
+  "version": "0.0.1",
+  "description": "just drink it",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha ./test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/turingou/beer"
+  },
+  "keywords": [
+    "beer",
+    "request",
+    "api"
+  ],
+  "author": "turingou",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/turingou/beer/issues"
+  },
+  "dependencies" : {
+    "request": "*",
+    "underscore": "*"
+  },
+}
