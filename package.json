@@ -1,7 +1,7 @@
 {
   "name": "beer",
   "version": "0.0.1",
-  "description": "just drink it",
+  "description": "have a drink and waiting for result callback",
   "main": "index.js",
   "scripts": {
     "test": "mocha ./test.js"
