@@ -4,12 +4,13 @@
 //  / /_/ /  __/  __/ /    
 // /_.___/\___/\___/_/     
 //
-// enjoy !
+// @brief : a simple request wrapper of request
+// @author : [turingou](http://guoyu.me)
 
 var request = require('request'),
     _ = require('underscore');
 
-var res = function(error, response, body ,cb) {
+var res = function(error, response, body, cb) {
     if (!error) {
         cb(null, {
             stat: response.statusCode,
@@ -18,7 +19,6 @@ var res = function(error, response, body ,cb) {
         });
     } else {
         cb(error, {
-            stat: response.statusCode,
             response: response
         });
     }
@@ -28,10 +28,10 @@ var res = function(error, response, body ,cb) {
 exports.join = function(params, url) {
     if (_.isObject(params)) {
         var url = url + '?';
-        _.each(params, function(value, key ,list) {
+        if (params.headers) delete params.headers;
+        _.each(params, function(value, key, list) {
             url = [
-                url,
-                (url.lastIndexOf('?') == url.length - 1) ? '' : '&',
+                url, (url.lastIndexOf('?') == url.length - 1) ? '' : '&',
                 key,
                 '=',
                 value
@@ -43,31 +43,59 @@ exports.join = function(params, url) {
 
 // get
 exports.get = function(url, params, cb) {
-    request.get({
+    var p = {
         url: exports.join(params, url),
         json: true
-    }, function(error, response, body){
+    }
+    if (params.headers) {
+        p['headers'] = params.headers;
+    }
+    request.get(p, function(error, response, body) {
         res(error, response, body, cb)
     })
 }
 
 // post
 exports.post = function(url, params, cb) {
-    request.post({
+    var p = {
         url: url,
-        form: params,
+        form: params.form,
         json: true
-    }, function(error, response, body){
+    }
+    if (params.headers) {
+        p['headers'] = params.headers;
+    };
+    request.post(p, function(error, response, body) {
         res(error, response, body, cb)
     })
 }
 
 // put
 exports.put = function(url, params, cb) {
-
+    var p = {
+        url: url,
+        body: params,
+        json: true
+    }
+    if (params.headers) {
+        p['headers'] = params.headers;
+    };
+    request.put(p, function(error, response, body) {
+        res(error, response, body, cb)
+    })
 }
 
 // delete
 exports.delete = function(url, params, cb) {
-    
+    var p = {
+        url: url,
+        body: params,
+        json: true
+    }
+    if (params.headers) {
+        p['headers'] = params.headers;
+    };
+    request.del(p, function(error, response, body) {
+        res(error, response, body, cb)
+    })
 }

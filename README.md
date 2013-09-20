@@ -9,14 +9,6 @@ a useful warpper of request. have a drink and waiting for results callback.
 $ npm install beer
 ````
 
-or 
-
-````
-$ git clone https://github.com/turingou/beer.git
-$ cd beer
-$ npm install
-````
-
 ### Sample code
 
 ````javascript
@@ -35,7 +27,7 @@ beer.get("http://google/com",{
 });
 ````
 
-### APIs
+### API
 
 #### beer.get(url,params,callback)
 
