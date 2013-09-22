@@ -15,8 +15,10 @@ $ npm install beer
 var beer = require('beer');
 
 beer.get("http://google/com",{
-    param: 1,
-    param2: 2
+    query: {
+        param: 1,
+        param2: 2
+    }
 },function(err,result){
     if (!err) {
         // enjoy !
@@ -33,7 +35,8 @@ beer.get("http://google/com",{
 
 - `url` [String]
 - `params` [Object]
-    - `key` : `value` : params will join `URL` as `?key=value`
+    - `query`
+        - `key` : `value` : params will join `URL` as `?key=value`
 - `callback` [Funtion]
     - error : null or error object
     - result : fetch result

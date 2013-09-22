@@ -44,7 +44,7 @@ exports.join = function(params, url) {
 // get
 exports.get = function(url, params, cb) {
     var p = {
-        url: exports.join(params, url),
+        url: params.query ? exports.join(params.query, url) : url,
         json: true
     }
     if (params.headers) {
