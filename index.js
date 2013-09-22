@@ -26,7 +26,7 @@ var res = function(error, response, body, cb) {
 
 // join params to url
 exports.join = function(params, url) {
-    if (_.isObject(params)) {
+    if (_.isObject(params) && !_.isEmpty(params)) {
         var url = url + '?';
         if (params.headers) delete params.headers;
         _.each(params, function(value, key, list) {
