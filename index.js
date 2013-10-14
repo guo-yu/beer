@@ -24,6 +24,13 @@ var res = function(error, response, body, cb) {
     }
 };
 
+var extend = function(url, params, method) {
+    return _.extend({
+        url: (method && method == 'get' && params.query) ? exports.join(params.query, url) : url,
+        json: (typeof(params.json) != 'undefined' && params.json === false) ? false : true
+    }, params);
+}
+
 // join params to url
 exports.join = function(params, url) {
     if (_.isObject(params) && !_.isEmpty(params)) {
@@ -43,59 +50,28 @@ exports.join = function(params, url) {
 
 // get
 exports.get = function(url, params, cb) {
-    var p = {
-        url: params.query ? exports.join(params.query, url) : url,
-        json: true
-    }
-    if (params.headers) {
-        p['headers'] = params.headers;
-    }
-    request.get(p, function(error, response, body) {
+    request.get(extend(url, params, 'get'), function(error, response, body) {
         res(error, response, body, cb)
-    })
-}
+    });
+};
 
 // post
 exports.post = function(url, params, cb) {
-    var p = {
-        url: url,
-        form: params.form,
-        json: true
-    }
-    if (params.headers) {
-        p['headers'] = params.headers;
-    };
-    request.post(p, function(error, response, body) {
+    request.post(extend(url, params), function(error, response, body) {
         res(error, response, body, cb)
     })
-}
+};
 
 // put
 exports.put = function(url, params, cb) {
-    var p = {
-        url: url,
-        body: params,
-        json: true
-    }
-    if (params.headers) {
-        p['headers'] = params.headers;
-    };
-    request.put(p, function(error, response, body) {
+    request.put(extend(url, params), function(error, response, body) {
         res(error, response, body, cb)
     })
-}
+};
 
 // delete
 exports.delete = function(url, params, cb) {
-    var p = {
-        url: url,
-        body: params,
-        json: true
-    }
-    if (params.headers) {
-        p['headers'] = params.headers;
-    };
-    request.del(p, function(error, response, body) {
+    request.del(extend(url, params), function(error, response, body) {
         res(error, response, body, cb)
     })
-}
+};

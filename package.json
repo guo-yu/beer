@@ -1,8 +1,10 @@
 {
   "name": "beer",
-  "version": "0.0.7",
-  "description": "a simple request wrapper of request",
+  "version": "0.0.8",
+  "description": "a simple useful wrapper of request",
   "main": "index.js",
+  "author": "turingou",
+  "license": "MIT",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha ./test.js"
   },
@@ -13,10 +15,9 @@
   "keywords": [
     "beer",
     "request",
-    "api"
+    "api",
+    "sdk"
   ],
-  "author": "turingou",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/turingou/beer/issues"
   },
