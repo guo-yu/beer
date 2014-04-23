@@ -1,32 +1,26 @@
 {
   "name": "beer",
-  "version": "0.0.8",
-  "description": "a simple useful wrapper of request",
+  "version": "0.1.0",
+  "description": "a sexy CSS3 animation toolkit",
   "main": "index.js",
-  "author": "turingou",
+  "author": "turing <o.u.turing@gmail.com>",
   "license": "MIT",
-  "scripts": {
-    "test": "./node_modules/mocha/bin/mocha ./test.js"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/turingou/beer"
   },
   "keywords": [
     "beer",
-    "request",
-    "api",
-    "sdk"
+    "css",
+    "css3",
+    "animate",
+    "animation",
+    "toolkit"
   ],
   "bugs": {
     "url": "https://github.com/turingou/beer/issues"
   },
-  "dependencies" : {
-    "request": "*",
-    "underscore": "*"
-  },
   "devDependencies": {
-    "mocha": "*",
-    "should": "*"
+    "grunt": "*"
   }
 }

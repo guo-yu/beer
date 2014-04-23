@@ -1,60 +1,50 @@
-![logo](https://cdn2.iconfinder.com/data/icons/fatcow/32/beer.png) beer ![npm](https://badge.fury.io/js/beer.png)
-======
+## ![logo](https://cdn2.iconfinder.com/data/icons/fatcow/32/beer.png) beer ![npm](https://badge.fury.io/js/beer.png)
 
-a useful warpper of request. have a drink and waiting for results callback.
+Beer is a sexy CSS3 animation toolkit. to enjoy your beer, check out this [online example](http://turingou.github.com/beer).
 
-### How to install 
+### Installation 
 
 ````
 $ npm install beer
 ````
 
-### Sample code
+### Example
 
-````javascript
-var beer = require('beer');
+```html
+<link rel="stylesheet" type="text/css" href="./beer.css" />
+<a class="button beer-button">Click Me!</a>
+```
 
-beer.get("http://google/com",{
-    query: {
-        param: 1,
-        param2: 2
-    }
-},function(err,result){
-    if (!err) {
-        // enjoy !
-        console.log(result)
-    } else {
-        console.log('Opps !!');
-    }
-});
-````
-
-### API
-
-#### beer.get(url,params,callback)
-
-- `url` [String]
-- `params` [Object]
-    - `query`
-        - `key` : `value` : params will join `URL` as `?key=value`
-- `callback` [Funtion]
-    - error : null or error object
-    - result : fetch result
-
-#### beer.post(url,params,callback)
-
-- `url` [String]
-- `params` [Object] sent as `form`
-    - `key` : `value`
-- `callback` [Funtion]
-    - error : null or error object
-    - result : fetch result
-
-### Run unit-test (Mocha)
+### Developer Guides
 
 ````
 $ git clone https://github.com/turingou/beer.git
 $ cd beer
-$ npm install // will install mocha localy
-$ npm test
+$ npm install
+$ grunt
 ````
+
+### MIT license
+Copyright (c) 2014 turing &lt;o.u.turing@gmail.com&gt;
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+---
+![docor](https://cdn1.iconfinder.com/data/icons/windows8_icons_iconpharm/26/doctor.png)
+built upon love by [docor](https://github.com/turingou/docor.git) v0.1.3
