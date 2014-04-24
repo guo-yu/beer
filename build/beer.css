@@ -1,16 +1,10 @@
 @-webkit-keyframes rotate {
-  50% {
-    border-radius: 300px;
-  }
   100% {
     -webkit-transform: rotateZ(359deg);
     transform: rotateZ(359deg);
   }
 }
 @keyframes rotate {
-  50% {
-    border-radius: 300px;
-  }
   100% {
     -webkit-transform: rotateZ(359deg);
     transform: rotateZ(359deg);
@@ -28,6 +22,38 @@
     transform: scale3d(0.75, 0.75, 0.75);
   }
 }
+@-webkit-keyframes progress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes progress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@-webkit-keyframes bar {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 100%;
+  }
+}
+@keyframes bar {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 100%;
+  }
+}
 .rotate {
   -webkit-animation: rotate 4s infinite;
   animation: rotate 4s infinite;
@@ -35,4 +61,16 @@
 .bounce {
   -webkit-animation: bounce 0.25s;
   animation: bounce 0.25s;
+}
+.actived {
+  -webkit-animation: bounce 0.25s;
+  animation: bounce 0.25s;
+}
+.loading {
+  -webkit-animation: progress 2s infinite;
+  animation: progress 2s infinite;
+}
+.chart-bar {
+  -webkit-animation: bar 3s infinite;
+  animation: bar 3s infinite;
 }
