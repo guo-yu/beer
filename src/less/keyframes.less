@@ -1,0 +1,16 @@
+// rotation
+@keyframes rotate {
+  50% {
+    border-radius: 300px; 
+  }
+  100% {
+    transform: rotateZ(359deg);
+  }
+}
+
+// bounce
+@keyframes bounce {
+  50% { 
+    transform: scale3d(@bounce, @bounce, @bounce);
+  }
+}

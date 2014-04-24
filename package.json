@@ -21,6 +21,8 @@
     "url": "https://github.com/turingou/beer/issues"
   },
   "devDependencies": {
-    "grunt": "*"
+    "grunt": "~0.4.1",
+    "grunt-contrib-less": "~0.7.0",
+    "grunt-autoprefixer": "*"
   }
 }

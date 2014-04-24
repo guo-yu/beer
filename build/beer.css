@@ -1,0 +1,38 @@
+@-webkit-keyframes rotate {
+  50% {
+    border-radius: 300px;
+  }
+  100% {
+    -webkit-transform: rotateZ(359deg);
+    transform: rotateZ(359deg);
+  }
+}
+@keyframes rotate {
+  50% {
+    border-radius: 300px;
+  }
+  100% {
+    -webkit-transform: rotateZ(359deg);
+    transform: rotateZ(359deg);
+  }
+}
+@-webkit-keyframes bounce {
+  50% {
+    -webkit-transform: scale3d(0.75, 0.75, 0.75);
+    transform: scale3d(0.75, 0.75, 0.75);
+  }
+}
+@keyframes bounce {
+  50% {
+    -webkit-transform: scale3d(0.75, 0.75, 0.75);
+    transform: scale3d(0.75, 0.75, 0.75);
+  }
+}
+.rotate {
+  -webkit-animation: rotate 4s infinite;
+  animation: rotate 4s infinite;
+}
+.bounce {
+  -webkit-animation: bounce 0.25s;
+  animation: bounce 0.25s;
+}
